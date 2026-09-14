@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>FECC Promotions, prototype de refonte</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0C0E'/%3E%3Cpath d='M9 8h13v3.2h-9.6v3.4h8v3.2h-8V24H9z' fill='%23CFC492'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#0B0C0E;--ink:#F1F2F3;--ink2:#A9AEB6;--ink3:#888E97;--line:#2B2F37;--brass:#CFC492;--brass2:#E1D8AE}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{min-height:100dvh;display:grid;place-items:center;padding:24px;color:var(--ink);font:400 15px/1.55 Manrope,system-ui,-apple-system,sans-serif;
+  background:radial-gradient(110% 80% at 50% 38%,#16181D 0%,var(--bg) 64%);-webkit-font-smoothing:antialiased}
+main{width:min(420px,100%);display:grid;justify-items:center;text-align:center}
+.logo{width:150px;height:auto;margin-bottom:26px}
+.lg-a{fill:var(--brass)}.lg-b{fill:#fff}
+.rule{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--brass),transparent);margin:0 0 22px}
+h1{font:600 22px/1.25 Archivo,system-ui,sans-serif;letter-spacing:-.01em;margin-bottom:8px}
+p.lead{color:var(--ink2);margin-bottom:26px;max-width:34ch}
+form{width:100%;display:grid;gap:12px}
+label{font:500 11px/1 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);text-align:left}
+input{width:100%;padding:15px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#fff;
+  font:500 16px/1 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.12em;text-align:center;text-transform:uppercase}
+input::placeholder{color:#6A6F78;letter-spacing:.12em}
+input:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 3px rgba(207,196,146,.18)}
+button{width:100%;padding:15px 18px;border-radius:999px;border:0;background:var(--brass);color:#0B0C0E;cursor:pointer;
+  font:600 15px/1 Archivo,system-ui,sans-serif;transition:background .2s,transform .15s}
+button:hover{background:var(--brass2)}
+button:active{transform:translateY(1px)}
+button:disabled{opacity:.6;cursor:progress;transform:none}
+.status{min-height:22px;font-size:13px;color:var(--ink2)}
+.status.err{color:#F0A08C}
+.bar{width:100%;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--brass);transition:width .25s ease}
+.foot{margin-top:30px;font-size:12.5px;color:var(--ink3)}
+.foot a{color:var(--ink2)}
+.shake{animation:shake .38s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){.shake{animation:none}.bar i{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <svg class="logo" role="img" aria-label="FECC Promotions" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204 98.8"> <g> <path class="lg-a" d="M141.7,60.4c-3.9,0-8,0-11.9,0c-5.7-0.1-10.6-4.9-10.7-10.5c-0.1-6.8-0.1-13.8-0.1-20.5c0-2.6,0-5.3,0-7.9 c0-0.5,0-1.1,0.1-1.6c1-5.6,5.5-9.4,11.2-9.5c3.8,0,7.6,0,11.5,0l7.9,0V0.2l-7.7,0c-3.8,0-7.6,0-11.4,0c-12.1,0-21.7,9.6-21.8,21.7 c0,9.1,0,18.2,0,27.1c0.1,12.1,9.6,21.6,21.8,21.7c2,0,4.1,0,6.1,0c1.7,0,3.5,0,5.2,0l7.9,0V60.4h-2.8 C145.2,60.4,143.4,60.4,141.7,60.4z"/> <path class="lg-a" d="M32.8,0.2c-3.8,0-7.6,0-11.4,0C9.3,0.2-0.3,9.7-0.3,21.8c0,6.4,0,12.8,0,19.2l0,29.5H9.8V43.8l0-3.3h20.4V30.3 H9.8l0-0.6c0-2.8,0-5.5,0-8.3c0-0.5,0-1.1,0.1-1.6c1-5.6,5.5-9.4,11.2-9.5c3.8,0,7.6,0,11.5,0l7.9,0V0.2L32.8,0.2z"/> <path class="lg-a" d="M63.8,30.3l0-2.7c0-2.2,0-4.5,0.1-6.7l0-0.5c0-0.2,0-0.4,0.1-0.6c1-5.6,5.5-9.4,11.2-9.5c3.8,0,7.6,0,11.5,0 l7.9,0V0.2l-7.7,0c-3.8,0-7.6,0-11.4,0c-12.1,0-21.6,9.5-21.8,21.5l0,0.2c0,3,0,6,0,9l0,4.5l0,4.5c0,3,0,6,0,9l0,0.2 c0.2,12,9.7,21.4,21.8,21.5c2.2,0,4.4,0,6.6,0c1.7,0,3.4,0,5.1,0l7.5,0V60.4l-7.9,0c-3.8,0-7.6,0-11.5,0 c-5.7-0.1-10.2-3.9-11.2-9.5c0-0.1,0-0.3-0.1-0.4l0-0.6c0-2.2-0.1-4.5-0.1-6.7l0-2.7V30.3z"/> <path class="lg-b" d="M64.2,63.2c0-3.9,0-8,0-11.9c0.1-5.7,4.9-10.6,10.5-10.7c4.8-0.1,15-0.1,19.8-0.1V30.3c-4.6,0-14.4,0-18.9,0 C63.6,30.4,54.1,39.9,54,52.1c0,2,0,4.1,0,6.1c0,1.7,0,3.5,0,5.2l0,7.3h10.2v-2.3C64.2,66.7,64.2,64.9,64.2,63.2z"/> <path class="lg-a" d="M195,10.4c-3.9,0-8,0-11.9,0c-5.7,0.1-10.6,4.9-10.7,10.5c-0.1,6.8-0.1,13.8-0.1,20.5c0,2.6,0,5.3,0,7.9 c0,0.5,0,1.1,0.1,1.6c1,5.6,5.5,9.4,11.2,9.5c3.8,0,7.6,0,11.5,0l7.9,0v10.2l-7.7,0c-3.8,0-7.6,0-11.4,0 c-12.1,0-21.7-9.6-21.8-21.7c0-9.1,0-18.2,0-27.1c0.1-12.1,9.6-21.6,21.8-21.7c2,0,4.1,0,6.1,0c1.7,0,3.5,0,5.2,0l7.9,0v10.2h-2.8 C198.4,10.4,196.7,10.4,195,10.4z"/> <g> <path class="lg-b" d="M62.9,90.6c0,0.7-0.1,1.2-0.4,1.7c-0.3,0.5-0.6,0.8-1,1.1c-0.4,0.3-0.9,0.5-1.5,0.6c-0.6,0.1-1.1,0.2-1.7,0.2 H57v4.4h-2.8V87h4.2c0.6,0,1.2,0.1,1.8,0.2c0.5,0.1,1,0.3,1.4,0.6s0.7,0.6,1,1.1S62.9,89.9,62.9,90.6z M60.1,90.6 c0-0.3-0.1-0.5-0.2-0.7c-0.1-0.2-0.3-0.3-0.4-0.4c-0.2-0.1-0.4-0.2-0.6-0.2c-0.2,0-0.5,0-0.7,0H57V92h1.2c0.3,0,0.5,0,0.7-0.1 c0.2,0,0.5-0.1,0.6-0.2c0.2-0.1,0.3-0.3,0.4-0.4C60.1,91.1,60.1,90.9,60.1,90.6z"/> <path class="lg-b" d="M74.9,98.6L72.4,94h-1v4.6h-2.7V87h4.4c0.6,0,1.1,0.1,1.6,0.2c0.5,0.1,1,0.3,1.4,0.6s0.8,0.6,1,1.1 c0.2,0.4,0.4,1,0.4,1.7c0,0.8-0.2,1.4-0.6,2c-0.4,0.5-1,0.9-1.8,1.1l3,4.9H74.9z M74.8,90.6c0-0.3-0.1-0.5-0.2-0.7 c-0.1-0.2-0.3-0.3-0.4-0.4c-0.2-0.1-0.4-0.2-0.6-0.2c-0.2,0-0.4,0-0.6,0h-1.5V92h1.3c0.2,0,0.5,0,0.7-0.1c0.2,0,0.5-0.1,0.7-0.2 c0.2-0.1,0.4-0.2,0.5-0.4C74.7,91.1,74.8,90.9,74.8,90.6z"/> <path class="lg-b" d="M95.6,92.8c0,0.9-0.2,1.7-0.5,2.5c-0.3,0.8-0.8,1.4-1.3,1.9c-0.6,0.5-1.2,1-2,1.2c-0.8,0.3-1.6,0.4-2.5,0.4 s-1.7-0.1-2.5-0.4c-0.8-0.3-1.4-0.7-2-1.2s-1-1.2-1.3-1.9c-0.3-0.8-0.5-1.6-0.5-2.5c0-0.9,0.2-1.8,0.5-2.5 c0.3-0.7,0.8-1.4,1.3-1.9c0.6-0.5,1.2-0.9,2-1.2c0.8-0.3,1.6-0.4,2.5-0.4s1.7,0.1,2.5,0.4c0.8,0.3,1.4,0.7,2,1.2 c0.6,0.5,1,1.2,1.3,1.9C95.4,91,95.6,91.8,95.6,92.8z M92.6,92.8c0-0.5-0.1-1-0.2-1.4c-0.2-0.4-0.4-0.8-0.7-1.1 c-0.3-0.3-0.6-0.6-1-0.7s-0.9-0.3-1.3-0.3c-0.5,0-0.9,0.1-1.3,0.3s-0.7,0.4-1,0.7c-0.3,0.3-0.5,0.7-0.7,1.1 c-0.2,0.4-0.2,0.9-0.2,1.4c0,0.5,0.1,1,0.2,1.4c0.2,0.4,0.4,0.8,0.7,1.1c0.3,0.3,0.6,0.6,1,0.7s0.8,0.3,1.3,0.3 c0.5,0,0.9-0.1,1.3-0.3c0.4-0.2,0.7-0.4,1-0.7c0.3-0.3,0.5-0.7,0.7-1.1C92.5,93.8,92.6,93.3,92.6,92.8z"/> <path class="lg-b" d="M112,98.6l0.1-8.2h0l-3,8.2h-2l-2.9-8.2h0l0.1,8.2h-2.6V87h4l2.6,7.4h0.1l2.5-7.4h4v11.5H112z"/> <path class="lg-b" d="M133.2,92.8c0,0.9-0.2,1.7-0.5,2.5c-0.3,0.8-0.8,1.4-1.3,1.9c-0.6,0.5-1.2,1-2,1.2c-0.8,0.3-1.6,0.4-2.5,0.4 c-0.9,0-1.7-0.1-2.5-0.4c-0.8-0.3-1.4-0.7-2-1.2s-1-1.2-1.3-1.9c-0.3-0.8-0.5-1.6-0.5-2.5c0-0.9,0.2-1.8,0.5-2.5 c0.3-0.7,0.8-1.4,1.3-1.9c0.6-0.5,1.2-0.9,2-1.2c0.8-0.3,1.6-0.4,2.5-0.4c0.9,0,1.7,0.1,2.5,0.4c0.8,0.3,1.4,0.7,2,1.2 c0.6,0.5,1,1.2,1.3,1.9C133,91,133.2,91.8,133.2,92.8z M130.2,92.8c0-0.5-0.1-1-0.2-1.4c-0.2-0.4-0.4-0.8-0.7-1.1 c-0.3-0.3-0.6-0.6-1-0.7c-0.4-0.2-0.9-0.3-1.3-0.3c-0.5,0-0.9,0.1-1.3,0.3s-0.7,0.4-1,0.7c-0.3,0.3-0.5,0.7-0.7,1.1 c-0.2,0.4-0.2,0.9-0.2,1.4c0,0.5,0.1,1,0.2,1.4c0.2,0.4,0.4,0.8,0.7,1.1c0.3,0.3,0.6,0.6,1,0.7s0.8,0.3,1.3,0.3 c0.5,0,0.9-0.1,1.3-0.3c0.4-0.2,0.7-0.4,1-0.7s0.5-0.7,0.7-1.1C130.1,93.8,130.2,93.3,130.2,92.8z"/> <path class="lg-b" d="M143.6,89.4v9.2h-2.8v-9.2h-3.3V87h9.3v2.4H143.6z"/> <path class="lg-b" d="M152.2,98.6V87h2.8v11.5H152.2z"/> <path class="lg-b" d="M173.5,92.8c0,0.9-0.2,1.7-0.5,2.5c-0.3,0.8-0.8,1.4-1.3,1.9c-0.6,0.5-1.2,1-2,1.2c-0.8,0.3-1.6,0.4-2.5,0.4 s-1.7-0.1-2.5-0.4c-0.8-0.3-1.4-0.7-2-1.2s-1-1.2-1.3-1.9c-0.3-0.8-0.5-1.6-0.5-2.5c0-0.9,0.2-1.8,0.5-2.5 c0.3-0.7,0.8-1.4,1.3-1.9c0.6-0.5,1.2-0.9,2-1.2c0.8-0.3,1.6-0.4,2.5-0.4s1.7,0.1,2.5,0.4c0.8,0.3,1.4,0.7,2,1.2 c0.6,0.5,1,1.2,1.3,1.9C173.3,91,173.5,91.8,173.5,92.8z M170.5,92.8c0-0.5-0.1-1-0.2-1.4c-0.2-0.4-0.4-0.8-0.7-1.1 c-0.3-0.3-0.6-0.6-1-0.7s-0.9-0.3-1.3-0.3c-0.5,0-0.9,0.1-1.3,0.3c-0.4,0.2-0.7,0.4-1,0.7c-0.3,0.3-0.5,0.7-0.7,1.1 c-0.2,0.4-0.2,0.9-0.2,1.4c0,0.5,0.1,1,0.2,1.4c0.2,0.4,0.4,0.8,0.7,1.1c0.3,0.3,0.6,0.6,1,0.7c0.4,0.2,0.8,0.3,1.3,0.3 c0.5,0,0.9-0.1,1.3-0.3c0.4-0.2,0.7-0.4,1-0.7s0.5-0.7,0.7-1.1C170.4,93.8,170.5,93.3,170.5,92.8z"/> <path class="lg-b" d="M186.7,98.6l-4.6-7.5h0l0.1,7.5h-2.7V87h3.2l4.6,7.5h0l-0.1-7.5h2.7v11.5H186.7z"/> <path class="lg-b" d="M202.4,90c-0.2-0.3-0.6-0.5-0.9-0.7c-0.4-0.2-0.8-0.3-1.1-0.3c-0.2,0-0.4,0-0.6,0c-0.2,0-0.4,0.1-0.5,0.2 c-0.2,0.1-0.3,0.2-0.4,0.4s-0.2,0.3-0.2,0.6c0,0.2,0,0.4,0.1,0.5c0.1,0.1,0.2,0.2,0.4,0.3c0.2,0.1,0.3,0.2,0.6,0.3 c0.2,0.1,0.5,0.2,0.7,0.3c0.4,0.1,0.8,0.3,1.2,0.4c0.4,0.2,0.8,0.4,1.2,0.6c0.3,0.3,0.6,0.6,0.9,1c0.2,0.4,0.3,0.9,0.3,1.4 c0,0.7-0.1,1.2-0.4,1.7c-0.2,0.5-0.6,0.9-1,1.2c-0.4,0.3-0.9,0.5-1.4,0.7c-0.5,0.2-1.1,0.2-1.6,0.2c-0.8,0-1.6-0.1-2.4-0.4 c-0.8-0.3-1.4-0.7-1.9-1.2l1.8-1.9c0.3,0.3,0.7,0.6,1.1,0.9c0.5,0.2,0.9,0.4,1.4,0.4c0.2,0,0.4,0,0.6-0.1c0.2,0,0.4-0.1,0.5-0.2 c0.1-0.1,0.3-0.2,0.4-0.4c0.1-0.2,0.1-0.4,0.1-0.6c0-0.2-0.1-0.4-0.2-0.6c-0.1-0.2-0.3-0.3-0.5-0.4c-0.2-0.1-0.5-0.2-0.8-0.3 c-0.3-0.1-0.6-0.2-1-0.3c-0.4-0.1-0.7-0.3-1.1-0.4c-0.4-0.2-0.7-0.4-0.9-0.6c-0.3-0.3-0.5-0.6-0.7-0.9c-0.2-0.4-0.3-0.8-0.3-1.3 c0-0.6,0.1-1.2,0.4-1.6c0.3-0.5,0.6-0.8,1-1.1c0.4-0.3,0.9-0.5,1.4-0.6c0.5-0.1,1.1-0.2,1.6-0.2c0.7,0,1.3,0.1,2,0.4 c0.7,0.2,1.3,0.6,1.8,1.1L202.4,90z"/> </g> </g> </svg>
+  <div class="rule" aria-hidden="true"></div>
+  <h1>Prototype de refonte du site</h1>
+  <p class="lead">Document confidentiel. Saisissez le code d'accès qui vous a été transmis.</p>
+  <form id="f" autocomplete="off">
+    <label for="k">Code d'accès</label>
+    <input id="k" name="k" spellcheck="false" autocapitalize="characters" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+    <button id="b" type="submit">Ouvrir le prototype</button>
+    <div class="bar" aria-hidden="true"><i id="p"></i></div>
+    <p class="status" id="s" role="status" aria-live="polite"></p>
+  </form>
+  <p class="foot">Vous n'avez pas le code ? <a href="mailto:victor@exoflow.fr">victor@exoflow.fr</a></p>
+</main>
+<script>
+(function(){
+"use strict";
+var FILE="site.enc?v=202609141019", MAGIC="FECCv7.1";
+var f=document.getElementById("f"),k=document.getElementById("k"),b=document.getElementById("b"),
+    s=document.getElementById("s"),p=document.getElementById("p");
+function say(t,err){s.textContent=t;s.className="status"+(err?" err":"")}
+function norm(v){return v.toUpperCase().replace(/[^A-Z0-9]/g,"")}
+/* Le fichier chiffré se télécharge dès l'ouverture : quand le code est saisi, il est déjà là. */
+var payload=(async function(){
+  var res=await fetch(FILE,{cache:"no-store"});
+  if(!res.ok) throw new Error("http "+res.status);
+  var total=+res.headers.get("Content-Length")||0, got=0, parts=[];
+  if(!res.body||!res.body.getReader){var whole=await res.arrayBuffer();p.style.width="100%";return whole}
+  var rd=res.body.getReader();
+  for(;;){var r=await rd.read();if(r.done)break;parts.push(r.value);got+=r.value.length;
+    if(total)p.style.width=Math.min(100,Math.round(got/total*100))+"%";}
+  p.style.width="100%";
+  var out=new Uint8Array(got),o=0;parts.forEach(function(c){out.set(c,o);o+=c.length});
+  return out.buffer;
+})();
+payload.catch(function(){});
+async function openSite(pass,silent){
+  if(!pass){say("Saisissez le code d'accès.",true);return}
+  b.disabled=true;say("Chargement du prototype…");
+  try{
+    var buf=await payload;
+    if(new TextDecoder().decode(buf.slice(0,8))!==MAGIC) throw new Error("format");
+    var dv=new DataView(buf),iter=dv.getUint32(8),salt=buf.slice(12,28),iv=buf.slice(28,40),ct=buf.slice(40);
+    say("Déchiffrement…");
+    var base=await crypto.subtle.importKey("raw",new TextEncoder().encode(pass),"PBKDF2",false,["deriveKey"]);
+    var key=await crypto.subtle.deriveKey({name:"PBKDF2",hash:"SHA-256",salt:salt,iterations:iter},base,{name:"AES-GCM",length:256},false,["decrypt"]);
+    var plain=await crypto.subtle.decrypt({name:"AES-GCM",iv:iv},key,ct);
+    try{sessionStorage.setItem("fecc-k",pass)}catch(_){}
+    var html=await new Response(new Blob([plain]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+    document.open();document.write(html);document.close();
+  }catch(err){
+    b.disabled=false;
+    if(silent){say("");try{sessionStorage.removeItem("fecc-k")}catch(_){}return}
+    if(String(err&&err.message).indexOf("http")===0){say("Le prototype n'a pas pu être chargé. Vérifiez la connexion puis rechargez la page.",true);return}
+    say("Code incorrect. Vérifiez-le et réessayez.",true);
+    f.classList.remove("shake");void f.offsetWidth;f.classList.add("shake");k.select();
+  }
+}
+f.addEventListener("submit",function(e){e.preventDefault();openSite(norm(k.value),false)});
+var saved=null;try{saved=sessionStorage.getItem("fecc-k")}catch(_){}
+if(saved){openSite(saved,true)}else{k.focus()}
+})();
+</script>
+</body>
+</html>
